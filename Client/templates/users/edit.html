@@ -1,0 +1,27 @@
+<form class="editUserForm">
+    <legend><%= user ? 'Update' : 'Create New' %> User</legend>
+    <div class="form-group">
+        <label for="">Name</label>
+        <input class="form-control" type="text" name="name" required="" value="<%= user ? user.name : '' %>">
+    </div>
+    <div class="form-group">
+        <label for="">email</label>
+        <input class="form-control" type="email" name="email" required="" value="<%= user ? user.email : '' %>">
+    </div>
+    <div class="form-group">
+        <label for="">Address</label>
+        <input class="form-control" type="text" name="address" required="" value="<%= user ? user.address : '' %>">
+    </div>
+    <div class="form-group">
+        <label for="">Age</label>
+        <input class="form-control" type="number" name="age" required="" value="<%= user ? user.age : '' %>">
+    </div>
+    <button type="submit" class="btn btn-primary"><%= user ? 'Update' : 'Create' %> User</button>
+    <% if(user) { %>
+        <input type="text" hidden="" name="id" value="<%= user.id %>">
+        <button type="button" class="btn btn-danger delete">Delete User</button>
+    <% }; %> 
+    <a href="/" class="btn">Cancel</a>
+    <hr>
+    <!-- <button type="submit" class="btn btn-primary"><%= user ? 'Update' : 'Create' %> User</button> -->
+</form>
